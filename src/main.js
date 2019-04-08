@@ -1,5 +1,6 @@
 import Unicon from 'vue-unicons';
 import { uniSearch } from 'vue-unicons/src/icons';
+import animate from 'animate.css';
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
@@ -9,6 +10,7 @@ import('normalize.css');
 
 Unicon.add(uniSearch);
 Vue.use(Unicon);
+Vue.use(animate);
 
 Vue.config.productionTip = false;
 
