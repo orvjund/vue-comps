@@ -11,6 +11,7 @@ module.exports = {
   ],
 
   rules: {
+    'linebreak-style': 'off',
     'no-console': 'off',
     'no-debugger': 'off',
     'vue/attribute-hyphenation': 'error',

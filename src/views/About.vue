@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ButtonColored v-if="!showSearch" @click="showSearch = true" />
+    <ButtonBordered v-if="!showSearch" @click="showSearch = true" />
     <SearchView
       v-else
       :result-item-component="SearchItemSong"
@@ -16,13 +16,13 @@
 <script>
 import SearchView from '@/components/SearchView.vue';
 import SearchItemSong from '@/components/SearchItemSong.vue';
-import ButtonColored from '@/components/ButtonColored.vue';
+import ButtonBordered from '@/components/ButtonBordered.vue';
 
 export default {
   name: 'About',
   components: {
     SearchView,
-    ButtonColored,
+    ButtonBordered,
   },
   data: () => ({
     SearchItemSong,
