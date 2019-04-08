@@ -1,6 +1,6 @@
 <template>
   <div class="result-item">
-    <span class="item-id">#{{ id }}</span>
+    <span class="item-id">{{ id }}</span>
     <span class="item-name">{{ title }}</span>
     <span class="item-price">{{ year }}</span>
   </div>
@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'SearchItemSong',
+  name: 'SearchSongResultItem',
   props: {
     id: {
       type: Number,

@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'SearchItemProduct',
+  name: 'SearchResultItem',
   props: {
     id: {
       type: Number,

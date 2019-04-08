@@ -1,32 +1,24 @@
 <template>
-  <div>
-    <ButtonColored v-if="!showSearch" @click="showSearch = true" />
-    <SearchView
-      v-else
-      :result-item-component="SearchItemSong"
-      :results="searchResult"
-      :searching="searchTimeout !== 0"
-      class="screen-center"
-      @close="showSearch = false"
-      @keyword-change="searchKeyword = $event"
-    />
-  </div>
+  <SearchView
+    :result-item-component="SearchSongResultItem"
+    :results="searchResult"
+    class="screen-center"
+    :searching="searchTimeout !== 0"
+    @keyword-change="searchKeyword = $event"
+  />
 </template>
 
 <script>
 import SearchView from '@/components/SearchView.vue';
-import SearchItemSong from '@/components/SearchItemSong.vue';
-import ButtonColored from '@/components/ButtonColored.vue';
+import SearchSongResultItem from '@/components/SearchSongResultItem.vue';
 
 export default {
   name: 'About',
   components: {
     SearchView,
-    ButtonColored,
   },
   data: () => ({
-    SearchItemSong,
-    showSearch: false,
+    SearchSongResultItem,
     searchResult: [],
     searchKeyword: '',
     searchTimeout: 0,
