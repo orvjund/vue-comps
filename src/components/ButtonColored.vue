@@ -20,6 +20,7 @@ export default {
 
 <style scoped>
 .btn-colored {
+  outline: none;
   background-color: var(--bg-color);
   border: none;
   color: white;

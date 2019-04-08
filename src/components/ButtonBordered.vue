@@ -1,5 +1,5 @@
 <template>
-  <button class="btn-colored" @click="$emit('click')">
+  <button class="btn-bordered" @click="$emit('click')">
     <slot>Click me</slot>
   </button>
 </template>
@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style scoped>
-.btn-colored {
+.btn-bordered {
   color: var(--color);
   border: 2px solid var(--color);
   background: none;
@@ -27,14 +27,15 @@ export default {
   cursor: pointer;
   border-radius: 2px;
   font-weight: bold;
+  outline: none;
 }
-.btn-colored:hover {
+.btn-bordered:hover {
   padding: 2px 7px;
   border-width: 3px;
   color: var(--color-hover);
   border-color: var(--color-hover);
 }
-.btn-colored:active {
+.btn-bordered:active {
   transform: scale(1.05);
 }
 </style>

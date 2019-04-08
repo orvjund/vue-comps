@@ -7,8 +7,8 @@
       :results="searchResult"
       :searching="searchTimeout !== 0"
       class="screen-center"
-      @close="showSearch = false"
-      @keyword-change="searchKeyword = $event"
+      @close="() => showSearch = false"
+      @keyword-change="() => searchKeyword = $event"
     />
   </div>
 </template>
