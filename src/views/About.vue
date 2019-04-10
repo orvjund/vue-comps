@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <ButtonBordered v-if="!showSearch" @click="showSearch = true" />
     <SearchView
       v-else
@@ -10,7 +10,7 @@
       @close="() => showSearch = false"
       @keyword-change="($event) => searchKeyword = $event"
     />
-  </div>
+  </main>
 </template>
 
 <script>

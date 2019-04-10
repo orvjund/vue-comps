@@ -1,17 +1,21 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <nav id="nav">
       <router-link class="router-link" to="/">Home</router-link>
       <span class="router-link-divider">|</span>
       <router-link class="router-link" to="/draw">Draw</router-link>
       <span class="router-link-divider">|</span>
       <router-link class="router-link" to="/about">About</router-link>
-    </div>
-    <router-view class="router-view" />
+    </nav>
+    <transition>
+      <keep-alive>
+        <router-view :key="$route.fullPath" class="router-view" />
+      </keep-alive>
+    </transition>
   </div>
 </template>
 
-<style scoped>
+<style>
 @import url('https://fonts.googleapis.com/css?family=Merienda');
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -42,5 +46,27 @@
 }
 .router-link-divider {
   font-family: 'Merienda', cursive;
+}
+.comic-border {
+  border: 3px solid #2d3436;
+  font-family: 'Merienda', cursive;
+  border-radius: 2% 95% 2% 99%/97% 2% 96% 2%;
+}
+.comic-border-large {
+  font-family: 'Merienda', cursive;
+  border: 3px solid #2d3436;
+  border-radius: 1% 98% 1% 99%/98% 1% 96% 1%;
+}
+.comic-border-small {
+  font-family: 'Merienda', cursive;
+  border: 3px solid #2d3436;
+  border-radius: 3% 96% 4% 92%/94% 4% 95% 3%;
+}
+.border-top-only {
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
 </style>

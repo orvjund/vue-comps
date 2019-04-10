@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <SeachView
       v-if="showSearch"
       :result-item-component="SearchItemProduct"
@@ -9,7 +9,7 @@
       @close="() => showSearch = false"
       @keyword-change="($event) => searchKeyword = $event"
     />
-  </div>
+  </main>
 </template>
 
 <script>
