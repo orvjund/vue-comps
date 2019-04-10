@@ -1,64 +1,48 @@
 <template>
   <div id="app">
-    <nav id="nav">
-      <router-link class="router-link" to="/">Home</router-link>
-      <span class="router-link-divider">|</span>
-      <router-link class="router-link" to="/draw">Draw</router-link>
-      <span class="router-link-divider">|</span>
-      <router-link class="router-link" to="/about">About</router-link>
-    </nav>
+    <TheNavBar class="the-nav" />
     <transition>
       <keep-alive>
         <router-view :key="$route.fullPath" class="router-view" />
       </keep-alive>
     </transition>
+    <ThePlayer class="the-footer" />
   </div>
 </template>
 
+<script>
+import TheNavBar from '@/components/TheNavBar.vue';
+import ThePlayer from '@/components/ThePlayer.vue';
+
+export default {
+  name: 'App',
+  components: {
+    TheNavBar,
+    ThePlayer,
+  },
+};
+</script>
+
+
 <style>
 @import url('https://fonts.googleapis.com/css?family=Merienda');
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+html {
+  font-size: 10px;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-.router-link {
-  font-family: 'Merienda', cursive;
-  padding: 0 15px;
-  text-decoration: none;
-  border-bottom: 2px solid;
-  border-bottom-left-radius: 99% 11%;
-  border-bottom-right-radius: 10% 5%;
-}
-.router-link-divider {
-  font-family: 'Merienda', cursive;
+body {
+  display: block;
+  overflow-x: hidden;
 }
 .comic-border {
   border: 3px solid #2d3436;
-  font-family: 'Merienda', cursive;
   border-radius: 2% 95% 2% 99%/97% 2% 96% 2%;
 }
 .comic-border-large {
-  font-family: 'Merienda', cursive;
   border: 3px solid #2d3436;
   border-radius: 1% 98% 1% 99%/98% 1% 96% 1%;
 }
 .comic-border-small {
-  font-family: 'Merienda', cursive;
   border: 3px solid #2d3436;
   border-radius: 3% 96% 4% 92%/94% 4% 95% 3%;
 }
@@ -68,5 +52,36 @@
   border-bottom: none;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+}
+</style>
+
+<style scoped>
+#app {
+  font-family: 'Merienda', cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  display: grid;
+  grid-template-rows: calc(1.6rem + 30px) 1fr calc(4.2rem + 10px);
+  min-height: 100vh;
+  width: 100vw;
+}
+.router-view {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+  padding: 10px;
+  overflow-x: auto;
+}
+.the-nav, .the-footer {
+  z-index: 1;
+  position: sticky;
+  width: 100vw;
+}
+.the-nav {
+  top: 0;
+}
+.the-footer {
+  bottom: 0;
 }
 </style>

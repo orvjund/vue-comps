@@ -6,7 +6,6 @@
       :result-item-component="SearchItemSong"
       :results="searchResult"
       :searching="searchTimeout !== 0"
-      class="screen-center"
       @close="() => showSearch = false"
       @keyword-change="($event) => searchKeyword = $event"
     />
@@ -56,12 +55,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.screen-center {
-  max-width: calc(100% - 10px);
-  margin: auto;
-  display: block;
-  width: 450px;
-}
-</style>

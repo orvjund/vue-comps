@@ -18,6 +18,7 @@ export default {
 
 <style scoped>
 .draw-card {
+  font-family: 'Merienda', cursive;
   margin: 0;
   background-image: url(http://clipart-library.com/images/rcLxG7qKi.jpg);
   background-size: cover;

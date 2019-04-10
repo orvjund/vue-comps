@@ -1,14 +1,12 @@
 <template>
   <main>
-    <!-- Draw cards -->
-    <div class="draws-container comic-border-large">
+    <section class="draws-container comic-border-large">
       <DrawCard
         v-for="index in 8"
         :key="index"
         v-bind="{id: index, imgSrc: 'http://clipart-library.com/images/rcLxG7qKi.jpg'}"
       />
-    </div>
-    <!-- Draw buttons -->
+    </section>
     <DrawButton>Draw</DrawButton>
   </main>
 </template>

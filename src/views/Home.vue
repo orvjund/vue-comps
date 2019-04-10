@@ -5,7 +5,6 @@
       :result-item-component="SearchItemProduct"
       :results="searchResult"
       :searching="searchTimeout !== 0"
-      class="screen-center"
       @close="() => showSearch = false"
       @keyword-change="($event) => searchKeyword = $event"
     />
@@ -61,12 +60,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.screen-center {
-  max-width: calc(100% - 10px);
-  margin: auto;
-  display: block;
-  width: 450px;
-}
 h3 {
   margin: 40px 0 0;
 }
